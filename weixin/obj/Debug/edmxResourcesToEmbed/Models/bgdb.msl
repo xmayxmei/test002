@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bgxtModelStoreContainer" CdmEntityContainer="bgxtEntities">
+    <EntitySetMapping Name="Bg_Mains">
+      <EntityTypeMapping TypeName="bgxtModel.Bg_Mains">
+        <MappingFragment StoreEntitySet="Bg_Mains">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="organize_id" ColumnName="organize_id" />
+          <ScalarProperty Name="horganize_id" ColumnName="horganize_id" />
+          <ScalarProperty Name="dept_id" ColumnName="dept_id" />
+          <ScalarProperty Name="hdept_id" ColumnName="hdept_id" />
+          <ScalarProperty Name="platform_id" ColumnName="platform_id" />
+          <ScalarProperty Name="bus_id" ColumnName="bus_id" />
+          <ScalarProperty Name="ef_flag" ColumnName="ef_flag" />
+          <ScalarProperty Name="declare_id" ColumnName="declare_id" />
+          <ScalarProperty Name="entry_type" ColumnName="entry_type" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="hstatus_id" ColumnName="hstatus_id" />
+          <ScalarProperty Name="hcustomer_id" ColumnName="hcustomer_id" />
+          <ScalarProperty Name="hcustomer_no" ColumnName="hcustomer_no" />
+          <ScalarProperty Name="hcustomer_name" ColumnName="hcustomer_name" />
+          <ScalarProperty Name="hcust_linkman" ColumnName="hcust_linkman" />
+          <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+          <ScalarProperty Name="customer_no" ColumnName="customer_no" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="cust_linkman" ColumnName="cust_linkman" />
+          <ScalarProperty Name="records_no" ColumnName="records_no" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="indate_dt" ColumnName="indate_dt" />
+          <ScalarProperty Name="apply_dt" ColumnName="apply_dt" />
+          <ScalarProperty Name="apply_no" ColumnName="apply_no" />
+          <ScalarProperty Name="custom_apply_no" ColumnName="custom_apply_no" />
+          <ScalarProperty Name="unify_no" ColumnName="unify_no" />
+          <ScalarProperty Name="verify_no" ColumnName="verify_no" />
+          <ScalarProperty Name="barcode_no" ColumnName="barcode_no" />
+          <ScalarProperty Name="transmode_no" ColumnName="transmode_no" />
+          <ScalarProperty Name="factory_no" ColumnName="factory_no" />
+          <ScalarProperty Name="factory_name" ColumnName="factory_name" />
+          <ScalarProperty Name="shipper_no" ColumnName="shipper_no" />
+          <ScalarProperty Name="shipper_name" ColumnName="shipper_name" />
+          <ScalarProperty Name="consignee_no" ColumnName="consignee_no" />
+          <ScalarProperty Name="consignee_name" ColumnName="consignee_name" />
+          <ScalarProperty Name="agent_no" ColumnName="agent_no" />
+          <ScalarProperty Name="agent_name" ColumnName="agent_name" />
+          <ScalarProperty Name="transname" ColumnName="transname" />
+          <ScalarProperty Name="cabin_no" ColumnName="cabin_no" />
+          <ScalarProperty Name="serial_no" ColumnName="serial_no" />
+          <ScalarProperty Name="trade_no" ColumnName="trade_no" />
+          <ScalarProperty Name="drawback_no" ColumnName="drawback_no" />
+          <ScalarProperty Name="imposemode_no" ColumnName="imposemode_no" />
+          <ScalarProperty Name="remitmode_no" ColumnName="remitmode_no" />
+          <ScalarProperty Name="imposepro" ColumnName="imposepro" />
+          <ScalarProperty Name="licence_no" ColumnName="licence_no" />
+          <ScalarProperty Name="start_country_no" ColumnName="start_country_no" />
+          <ScalarProperty Name="loadport_no" ColumnName="loadport_no" />
+          <ScalarProperty Name="end_country_no" ColumnName="end_country_no" />
+          <ScalarProperty Name="bargainmode_no" ColumnName="bargainmode_no" />
+          <ScalarProperty Name="freightmode_no" ColumnName="freightmode_no" />
+          <ScalarProperty Name="freight_currency_no" ColumnName="freight_currency_no" />
+          <ScalarProperty Name="loadport_dt" ColumnName="loadport_dt" />
+          <ScalarProperty Name="freight" ColumnName="freight" />
+          <ScalarProperty Name="subscribemode_no" ColumnName="subscribemode_no" />
+          <ScalarProperty Name="subscribe_currency_no" ColumnName="subscribe_currency_no" />
+          <ScalarProperty Name="subscribe" ColumnName="subscribe" />
+          <ScalarProperty Name="incidentalmode_no" ColumnName="incidentalmode_no" />
+          <ScalarProperty Name="incidental_currency_no" ColumnName="incidental_currency_no" />
+          <ScalarProperty Name="incidental" ColumnName="incidental" />
+          <ScalarProperty Name="contract_no" ColumnName="contract_no" />
+          <ScalarProperty Name="piece" ColumnName="piece" />
+          <ScalarProperty Name="pack_no" ColumnName="pack_no" />
+          <ScalarProperty Name="grossweight" ColumnName="grossweight" />
+          <ScalarProperty Name="netweight" ColumnName="netweight" />
+          <ScalarProperty Name="truck_no" ColumnName="truck_no" />
+          <ScalarProperty Name="declare_group_id" ColumnName="declare_group_id" />
+          <ScalarProperty Name="receive_dt" ColumnName="receive_dt" />
+          <ScalarProperty Name="receive_id" ColumnName="receive_id" />
+          <ScalarProperty Name="tally_dt" ColumnName="tally_dt" />
+          <ScalarProperty Name="tally_id" ColumnName="tally_id" />
+          <ScalarProperty Name="end_dt" ColumnName="end_dt" />
+          <ScalarProperty Name="pass_yn" ColumnName="pass_yn" />
+          <ScalarProperty Name="pass_dt" ColumnName="pass_dt" />
+          <ScalarProperty Name="inspect_pass_dt" ColumnName="inspect_pass_dt" />
+          <ScalarProperty Name="complete_yn" ColumnName="complete_yn" />
+          <ScalarProperty Name="complete_id" ColumnName="complete_id" />
+          <ScalarProperty Name="complete_dt" ColumnName="complete_dt" />
+          <ScalarProperty Name="bus_no" ColumnName="bus_no" />
+          <ScalarProperty Name="accompany_no" ColumnName="accompany_no" />
+          <ScalarProperty Name="check_no" ColumnName="check_no" />
+          <ScalarProperty Name="vessel" ColumnName="vessel" />
+          <ScalarProperty Name="voyage" ColumnName="voyage" />
+          <ScalarProperty Name="zcd_cbbh" ColumnName="zcd_cbbh" />
+          <ScalarProperty Name="zcd_lxr" ColumnName="zcd_lxr" />
+          <ScalarProperty Name="zcd_lxdh" ColumnName="zcd_lxdh" />
+          <ScalarProperty Name="book_no" ColumnName="book_no" />
+          <ScalarProperty Name="wharf_name" ColumnName="wharf_name" />
+          <ScalarProperty Name="ship_agent_no" ColumnName="ship_agent_no" />
+          <ScalarProperty Name="ship_agent_name" ColumnName="ship_agent_name" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="drawback_dt" ColumnName="drawback_dt" />
+          <ScalarProperty Name="factory" ColumnName="factory" />
+          <ScalarProperty Name="entrust_no" ColumnName="entrust_no" />
+          <ScalarProperty Name="container_count" ColumnName="container_count" />
+          <ScalarProperty Name="num_20" ColumnName="num_20" />
+          <ScalarProperty Name="num_40" ColumnName="num_40" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="edi_yn" ColumnName="edi_yn" />
+          <ScalarProperty Name="nobook_yn" ColumnName="nobook_yn" />
+          <ScalarProperty Name="back_yn" ColumnName="back_yn" />
+          <ScalarProperty Name="change_yn" ColumnName="change_yn" />
+          <ScalarProperty Name="trans" ColumnName="trans" />
+          <ScalarProperty Name="reprints" ColumnName="reprints" />
+          <ScalarProperty Name="container_no1" ColumnName="container_no1" />
+          <ScalarProperty Name="zx_yn" ColumnName="zx_yn" />
+          <ScalarProperty Name="port_no" ColumnName="port_no" />
+          <ScalarProperty Name="import_cabin_id" ColumnName="import_cabin_id" />
+          <ScalarProperty Name="import_cabin_dt" ColumnName="import_cabin_dt" />
+          <ScalarProperty Name="logical_check_id" ColumnName="logical_check_id" />
+          <ScalarProperty Name="logical_check_dt" ColumnName="logical_check_dt" />
+          <ScalarProperty Name="audit_by" ColumnName="audit_by" />
+          <ScalarProperty Name="audit_dt" ColumnName="audit_dt" />
+          <ScalarProperty Name="zgd_customer_name" ColumnName="zgd_customer_name" />
+          <ScalarProperty Name="swipe_dt" ColumnName="swipe_dt" />
+          <ScalarProperty Name="swipe_by" ColumnName="swipe_by" />
+          <ScalarProperty Name="qpstatus" ColumnName="qpstatus" />
+          <ScalarProperty Name="tgdstatus" ColumnName="tgdstatus" />
+          <ScalarProperty Name="cost_note" ColumnName="cost_note" />
+          <ScalarProperty Name="charge_note" ColumnName="charge_note" />
+          <ScalarProperty Name="num_goods" ColumnName="num_goods" />
+          <ScalarProperty Name="zzs_cost" ColumnName="zzs_cost" />
+          <ScalarProperty Name="gs_cost" ColumnName="gs_cost" />
+          <ScalarProperty Name="xfs_cost" ColumnName="xfs_cost" />
+          <ScalarProperty Name="qts_cost" ColumnName="qts_cost" />
+          <ScalarProperty Name="hgcg_count" ColumnName="hgcg_count" />
+          <ScalarProperty Name="hgcg_20" ColumnName="hgcg_20" />
+          <ScalarProperty Name="hgcg_40" ColumnName="hgcg_40" />
+          <ScalarProperty Name="hgcg_cost" ColumnName="hgcg_cost" />
+          <ScalarProperty Name="hgcg_by" ColumnName="hgcg_by" />
+          <ScalarProperty Name="hgcg_dt" ColumnName="hgcg_dt" />
+          <ScalarProperty Name="sjcg_count" ColumnName="sjcg_count" />
+          <ScalarProperty Name="sjcg_20" ColumnName="sjcg_20" />
+          <ScalarProperty Name="sjcg_40" ColumnName="sjcg_40" />
+          <ScalarProperty Name="sjcg_cost" ColumnName="sjcg_cost" />
+          <ScalarProperty Name="sjcg_by" ColumnName="sjcg_by" />
+          <ScalarProperty Name="sjcg_dt" ColumnName="sjcg_dt" />
+          <ScalarProperty Name="contract_dt" ColumnName="contract_dt" />
+          <ScalarProperty Name="invoice_dt" ColumnName="invoice_dt" />
+          <ScalarProperty Name="invoice_no" ColumnName="invoice_no" />
+          <ScalarProperty Name="seller_address" ColumnName="seller_address" />
+          <ScalarProperty Name="seller_tel" ColumnName="seller_tel" />
+          <ScalarProperty Name="buyers_address" ColumnName="buyers_address" />
+          <ScalarProperty Name="buyers_tel" ColumnName="buyers_tel" />
+          <ScalarProperty Name="signed_at" ColumnName="signed_at" />
+          <ScalarProperty Name="vessel2" ColumnName="vessel2" />
+          <ScalarProperty Name="voyage2" ColumnName="voyage2" />
+          <ScalarProperty Name="boxis" ColumnName="boxis" />
+          <ScalarProperty Name="jkkxtype" ColumnName="jkkxtype" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="codeclass">
+      <EntityTypeMapping TypeName="bgxtModel.codeclass">
+        <MappingFragment StoreEntitySet="codeclass">
+          <ScalarProperty Name="ZID" ColumnName="ZID" />
+          <ScalarProperty Name="ZUCODE" ColumnName="ZUCODE" />
+          <ScalarProperty Name="ZNAMEC" ColumnName="ZNAMEC" />
+          <ScalarProperty Name="ZIMGID" ColumnName="ZIMGID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Codes">
+      <EntityTypeMapping TypeName="bgxtModel.Codes">
+        <MappingFragment StoreEntitySet="Codes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="zclass_id" ColumnName="zclass_id" />
+          <ScalarProperty Name="zucode" ColumnName="zucode" />
+          <ScalarProperty Name="znamec" ColumnName="znamec" />
+          <ScalarProperty Name="zsequence" ColumnName="zsequence" />
+          <ScalarProperty Name="ztype" ColumnName="ztype" />
+          <ScalarProperty Name="znamee" ColumnName="znamee" />
+          <ScalarProperty Name="zucode_p" ColumnName="zucode_p" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stcodes">
+      <EntityTypeMapping TypeName="bgxtModel.Stcodes">
+        <MappingFragment StoreEntitySet="Stcodes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ver_ts" ColumnName="ver_ts" />
+          <ScalarProperty Name="code_ts" ColumnName="code_ts" />
+          <ScalarProperty Name="g_name" ColumnName="g_name" />
+          <ScalarProperty Name="control" ColumnName="control" />
+          <ScalarProperty Name="unit_no" ColumnName="unit_no" />
+          <ScalarProperty Name="sunit_no" ColumnName="sunit_no" />
+          <ScalarProperty Name="low_rate" ColumnName="low_rate" />
+          <ScalarProperty Name="high_rate" ColumnName="high_rate" />
+          <ScalarProperty Name="tax_type" ColumnName="tax_type" />
+          <ScalarProperty Name="tax_rate" ColumnName="tax_rate" />
+          <ScalarProperty Name="note_s" ColumnName="note_s" />
+          <ScalarProperty Name="BEGIN_DATE" ColumnName="BEGIN_DATE" />
+          <ScalarProperty Name="END_DATE" ColumnName="END_DATE" />
+          <ScalarProperty Name="LSJM_FLAG" ColumnName="LSJM_FLAG" />
+          <ScalarProperty Name="TARIFF_MARK" ColumnName="TARIFF_MARK" />
+          <ScalarProperty Name="DUTY_TYPE" ColumnName="DUTY_TYPE" />
+          <ScalarProperty Name="COM_V_LOW_RATE" ColumnName="COM_V_LOW_RATE" />
+          <ScalarProperty Name="COM_V_HIGH_RATE" ColumnName="COM_V_HIGH_RATE" />
+          <ScalarProperty Name="COM_Q_LOW_RATE" ColumnName="COM_Q_LOW_RATE" />
+          <ScalarProperty Name="COM_Q_HIGH_RATE" ColumnName="COM_Q_HIGH_RATE" />
+          <ScalarProperty Name="COM_UNIT_FLAG" ColumnName="COM_UNIT_FLAG" />
+          <ScalarProperty Name="COM_LOW_CTL_PRICE" ColumnName="COM_LOW_CTL_PRICE" />
+          <ScalarProperty Name="COM_HIGH_CTL_PRICE" ColumnName="COM_HIGH_CTL_PRICE" />
+          <ScalarProperty Name="COM_CTL_CURR" ColumnName="COM_CTL_CURR" />
+          <ScalarProperty Name="OUT_RATE" ColumnName="OUT_RATE" />
+          <ScalarProperty Name="REG_TYPE" ColumnName="REG_TYPE" />
+          <ScalarProperty Name="REG_RATE" ColumnName="REG_RATE" />
+          <ScalarProperty Name="REG_Q_LOW_RATE" ColumnName="REG_Q_LOW_RATE" />
+          <ScalarProperty Name="REG_Q_HIGH_RATE" ColumnName="REG_Q_HIGH_RATE" />
+          <ScalarProperty Name="REG_UNIT_FLAG" ColumnName="REG_UNIT_FLAG" />
+          <ScalarProperty Name="REG_CTL_PRICE" ColumnName="REG_CTL_PRICE" />
+          <ScalarProperty Name="REG_CTL_CURR" ColumnName="REG_CTL_CURR" />
+          <ScalarProperty Name="TAIWAN_RATE" ColumnName="TAIWAN_RATE" />
+          <ScalarProperty Name="OTHER_TYPE" ColumnName="OTHER_TYPE" />
+          <ScalarProperty Name="OTHER_RATE" ColumnName="OTHER_RATE" />
+          <ScalarProperty Name="ILOW_PRICE" ColumnName="ILOW_PRICE" />
+          <ScalarProperty Name="IHIGH_PRICE" ColumnName="IHIGH_PRICE" />
+          <ScalarProperty Name="ELOW_PRICE" ColumnName="ELOW_PRICE" />
+          <ScalarProperty Name="EHIGH_PRICE" ColumnName="EHIGH_PRICE" />
+          <ScalarProperty Name="MAX_IN" ColumnName="MAX_IN" />
+          <ScalarProperty Name="MAX_OUT" ColumnName="MAX_OUT" />
+          <ScalarProperty Name="CHK_PRICE" ColumnName="CHK_PRICE" />
+          <ScalarProperty Name="OUT_DUTY_TYPE" ColumnName="OUT_DUTY_TYPE" />
+          <ScalarProperty Name="OUT_COM_UNIT_FLAG" ColumnName="OUT_COM_UNIT_FLAG" />
+          <ScalarProperty Name="OUT_COM_Q_RATE" ColumnName="OUT_COM_Q_RATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Users">
+      <EntityTypeMapping TypeName="bgxtModel.Sys_Users">
+        <MappingFragment StoreEntitySet="Sys_Users">
+          <ScalarProperty Name="openId_ebaoguan" ColumnName="openId_ebaoguan" />
+          <ScalarProperty Name="openId_ibaoguan" ColumnName="openId_ibaoguan" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="VerifyCode" ColumnName="VerifyCode" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InterData">
+      <EntityTypeMapping TypeName="bgxtModel.InterData">
+        <MappingFragment StoreEntitySet="InterData">
+          <ScalarProperty Name="contents" ColumnName="contents" />
+          <ScalarProperty Name="create_dt" ColumnName="create_dt" />
+          <ScalarProperty Name="handler" ColumnName="handler" />
+          <ScalarProperty Name="lower" ColumnName="lower" />
+          <ScalarProperty Name="upper" ColumnName="upper" />
+          <ScalarProperty Name="way" ColumnName="way" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stitems">
+      <EntityTypeMapping TypeName="bgxtModel.Stitems">
+        <MappingFragment StoreEntitySet="Stitems">
+          <ScalarProperty Name="ver_ts" ColumnName="ver_ts" />
+          <ScalarProperty Name="need_yn" ColumnName="need_yn" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="znamec" ColumnName="znamec" />
+          <ScalarProperty Name="code_ts" ColumnName="code_ts" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="bgxtModel.Companies">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="seal_pic" ColumnName="seal_pic" />
+          <ScalarProperty Name="zx_yn" ColumnName="zx_yn" />
+          <ScalarProperty Name="oentry_type" ColumnName="oentry_type" />
+          <ScalarProperty Name="ientry_type" ColumnName="ientry_type" />
+          <ScalarProperty Name="com_Level" ColumnName="com_Level" />
+          <ScalarProperty Name="com_type" ColumnName="com_type" />
+          <ScalarProperty Name="exp_dt" ColumnName="exp_dt" />
+          <ScalarProperty Name="limit_dt" ColumnName="limit_dt" />
+          <ScalarProperty Name="znamec" ColumnName="znamec" />
+          <ScalarProperty Name="ste_no" ColumnName="ste_no" />
+          <ScalarProperty Name="zucode" ColumnName="zucode" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

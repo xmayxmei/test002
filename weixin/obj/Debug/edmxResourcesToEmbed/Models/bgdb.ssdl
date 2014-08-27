@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bgxtModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="bgxtModelStoreContainer">
+    <EntitySet Name="Bg_Mains" EntityType="bgxtModel.Store.Bg_Mains" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="codeclass" EntityType="bgxtModel.Store.codeclass" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Codes" EntityType="bgxtModel.Store.Codes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Companies" EntityType="bgxtModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InterData" EntityType="bgxtModel.Store.InterData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stcodes" EntityType="bgxtModel.Store.Stcodes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stitems" EntityType="bgxtModel.Store.Stitems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Users" EntityType="bgxtModel.Store.Sys_Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Bg_Mains_Bg_Mains" Association="bgxtModel.Store.FK_Bg_Mains_Bg_Mains">
+      <End Role="Bg_Mains" EntitySet="Bg_Mains" />
+      <End Role="Bg_Mains1" EntitySet="Bg_Mains" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bg_Mains">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="organize_id" Type="int" />
+    <Property Name="horganize_id" Type="int" />
+    <Property Name="dept_id" Type="int" />
+    <Property Name="hdept_id" Type="int" />
+    <Property Name="platform_id" Type="int" />
+    <Property Name="bus_id" Type="int" />
+    <Property Name="ef_flag" Type="char" MaxLength="1" />
+    <Property Name="declare_id" Type="int" />
+    <Property Name="entry_type" Type="varchar" MaxLength="1" />
+    <Property Name="status_id" Type="int" />
+    <Property Name="hstatus_id" Type="int" />
+    <Property Name="hcustomer_id" Type="int" />
+    <Property Name="hcustomer_no" Type="varchar" MaxLength="30" />
+    <Property Name="hcustomer_name" Type="varchar" MaxLength="50" />
+    <Property Name="hcust_linkman" Type="varchar" MaxLength="50" />
+    <Property Name="customer_id" Type="int" />
+    <Property Name="customer_no" Type="varchar" MaxLength="30" />
+    <Property Name="customer_name" Type="varchar" MaxLength="100" />
+    <Property Name="cust_linkman" Type="varchar" MaxLength="50" />
+    <Property Name="records_no" Type="varchar" MaxLength="30" />
+    <Property Name="goods_name" Type="varchar" MaxLength="100" />
+    <Property Name="indate_dt" Type="smalldatetime" />
+    <Property Name="apply_dt" Type="smalldatetime" />
+    <Property Name="apply_no" Type="varchar" MaxLength="10" />
+    <Property Name="custom_apply_no" Type="varchar" MaxLength="20" />
+    <Property Name="unify_no" Type="varchar" MaxLength="20" />
+    <Property Name="verify_no" Type="varchar" MaxLength="30" />
+    <Property Name="barcode_no" Type="varchar" MaxLength="30" />
+    <Property Name="transmode_no" Type="varchar" MaxLength="30" />
+    <Property Name="factory_no" Type="varchar" MaxLength="30" />
+    <Property Name="factory_name" Type="varchar" MaxLength="50" />
+    <Property Name="shipper_no" Type="varchar" MaxLength="30" />
+    <Property Name="shipper_name" Type="varchar" MaxLength="100" />
+    <Property Name="consignee_no" Type="varchar" MaxLength="30" />
+    <Property Name="consignee_name" Type="varchar" MaxLength="100" />
+    <Property Name="agent_no" Type="varchar" MaxLength="30" />
+    <Property Name="agent_name" Type="varchar" MaxLength="100" />
+    <Property Name="transname" Type="varchar" MaxLength="100" />
+    <Property Name="cabin_no" Type="varchar" MaxLength="30" />
+    <Property Name="serial_no" Type="varchar" MaxLength="30" />
+    <Property Name="trade_no" Type="varchar" MaxLength="30" />
+    <Property Name="drawback_no" Type="varchar" MaxLength="10" />
+    <Property Name="imposemode_no" Type="varchar" MaxLength="30" />
+    <Property Name="remitmode_no" Type="varchar" MaxLength="30" />
+    <Property Name="imposepro" Type="decimal" Scale="4" />
+    <Property Name="licence_no" Type="varchar" MaxLength="30" />
+    <Property Name="start_country_no" Type="varchar" MaxLength="30" />
+    <Property Name="loadport_no" Type="varchar" MaxLength="30" />
+    <Property Name="end_country_no" Type="varchar" MaxLength="30" />
+    <Property Name="bargainmode_no" Type="varchar" MaxLength="30" />
+    <Property Name="freightmode_no" Type="varchar" MaxLength="30" />
+    <Property Name="freight_currency_no" Type="varchar" MaxLength="30" />
+    <Property Name="loadport_dt" Type="smalldatetime" />
+    <Property Name="freight" Type="decimal" Scale="4" />
+    <Property Name="subscribemode_no" Type="varchar" MaxLength="30" />
+    <Property Name="subscribe_currency_no" Type="varchar" MaxLength="30" />
+    <Property Name="subscribe" Type="decimal" Scale="4" />
+    <Property Name="incidentalmode_no" Type="varchar" MaxLength="30" />
+    <Property Name="incidental_currency_no" Type="varchar" MaxLength="30" />
+    <Property Name="incidental" Type="decimal" Scale="4" />
+    <Property Name="contract_no" Type="varchar" MaxLength="30" />
+    <Property Name="piece" Type="int" />
+    <Property Name="pack_no" Type="varchar" MaxLength="30" />
+    <Property Name="grossweight" Type="decimal" Scale="4" />
+    <Property Name="netweight" Type="decimal" Scale="4" />
+    <Property Name="truck_no" Type="varchar" MaxLength="30" />
+    <Property Name="declare_group_id" Type="int" />
+    <Property Name="receive_dt" Type="smalldatetime" />
+    <Property Name="receive_id" Type="int" />
+    <Property Name="tally_dt" Type="smalldatetime" />
+    <Property Name="tally_id" Type="int" />
+    <Property Name="end_dt" Type="smalldatetime" />
+    <Property Name="pass_yn" Type="tinyint" />
+    <Property Name="pass_dt" Type="smalldatetime" />
+    <Property Name="inspect_pass_dt" Type="smalldatetime" />
+    <Property Name="complete_yn" Type="tinyint" />
+    <Property Name="complete_id" Type="int" />
+    <Property Name="complete_dt" Type="smalldatetime" />
+    <Property Name="bus_no" Type="varchar" MaxLength="30" />
+    <Property Name="accompany_no" Type="varchar" MaxLength="30" />
+    <Property Name="check_no" Type="varchar" MaxLength="30" />
+    <Property Name="vessel" Type="varchar" MaxLength="50" />
+    <Property Name="voyage" Type="varchar" MaxLength="50" />
+    <Property Name="zcd_cbbh" Type="varchar" MaxLength="30" />
+    <Property Name="zcd_lxr" Type="varchar" MaxLength="100" />
+    <Property Name="zcd_lxdh" Type="varchar" MaxLength="50" />
+    <Property Name="book_no" Type="varchar" MaxLength="30" />
+    <Property Name="wharf_name" Type="varchar" MaxLength="30" />
+    <Property Name="ship_agent_no" Type="varchar" MaxLength="10" />
+    <Property Name="ship_agent_name" Type="varchar" MaxLength="100" />
+    <Property Name="weight" Type="decimal" Scale="4" />
+    <Property Name="amount" Type="decimal" Scale="4" />
+    <Property Name="drawback_dt" Type="smalldatetime" />
+    <Property Name="factory" Type="varchar" MaxLength="100" />
+    <Property Name="entrust_no" Type="varchar" MaxLength="30" />
+    <Property Name="container_count" Type="int" />
+    <Property Name="num_20" Type="int" />
+    <Property Name="num_40" Type="int" />
+    <Property Name="mark" Type="varchar" MaxLength="1000" />
+    <Property Name="edi_yn" Type="int" />
+    <Property Name="nobook_yn" Type="int" />
+    <Property Name="back_yn" Type="int" />
+    <Property Name="change_yn" Type="int" />
+    <Property Name="trans" Type="int" />
+    <Property Name="reprints" Type="int" />
+    <Property Name="container_no1" Type="varchar" MaxLength="30" />
+    <Property Name="zx_yn" Type="int" />
+    <Property Name="port_no" Type="varchar" MaxLength="30" />
+    <Property Name="import_cabin_id" Type="int" />
+    <Property Name="import_cabin_dt" Type="smalldatetime" />
+    <Property Name="logical_check_id" Type="int" />
+    <Property Name="logical_check_dt" Type="smalldatetime" />
+    <Property Name="audit_by" Type="int" />
+    <Property Name="audit_dt" Type="smalldatetime" />
+    <Property Name="zgd_customer_name" Type="varchar" MaxLength="100" />
+    <Property Name="swipe_dt" Type="smalldatetime" />
+    <Property Name="swipe_by" Type="int" />
+    <Property Name="qpstatus" Type="varchar" MaxLength="30" />
+    <Property Name="tgdstatus" Type="varchar" MaxLength="100" />
+    <Property Name="cost_note" Type="varchar" MaxLength="100" />
+    <Property Name="charge_note" Type="varchar" MaxLength="300" />
+    <Property Name="num_goods" Type="int" />
+    <Property Name="zzs_cost" Type="decimal" Scale="4" />
+    <Property Name="gs_cost" Type="decimal" Scale="4" />
+    <Property Name="xfs_cost" Type="decimal" Scale="4" />
+    <Property Name="qts_cost" Type="decimal" Scale="4" />
+    <Property Name="hgcg_count" Type="int" />
+    <Property Name="hgcg_20" Type="int" />
+    <Property Name="hgcg_40" Type="int" />
+    <Property Name="hgcg_cost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="hgcg_by" Type="int" />
+    <Property Name="hgcg_dt" Type="smalldatetime" />
+    <Property Name="sjcg_count" Type="int" />
+    <Property Name="sjcg_20" Type="int" />
+    <Property Name="sjcg_40" Type="int" />
+    <Property Name="sjcg_cost" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="sjcg_by" Type="int" />
+    <Property Name="sjcg_dt" Type="smalldatetime" />
+    <Property Name="contract_dt" Type="smalldatetime" />
+    <Property Name="invoice_dt" Type="smalldatetime" />
+    <Property Name="invoice_no" Type="varchar" MaxLength="30" />
+    <Property Name="seller_address" Type="varchar" MaxLength="100" />
+    <Property Name="seller_tel" Type="varchar" MaxLength="50" />
+    <Property Name="buyers_address" Type="varchar" MaxLength="100" />
+    <Property Name="buyers_tel" Type="varchar" MaxLength="50" />
+    <Property Name="signed_at" Type="varchar" MaxLength="50" />
+    <Property Name="vessel2" Type="varchar" MaxLength="50" />
+    <Property Name="voyage2" Type="varchar" MaxLength="50" />
+    <Property Name="boxis" Type="varchar" MaxLength="50" />
+    <Property Name="jkkxtype" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="codeclass">
+    <Key>
+      <PropertyRef Name="ZID" />
+    </Key>
+    <Property Name="ZID" Type="int" Nullable="false" />
+    <Property Name="ZUCODE" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ZNAMEC" Type="varchar" Nullable="false" MaxLength="60" />
+    <Property Name="ZIMGID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Codes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="zclass_id" Type="int" />
+    <Property Name="zucode" Type="varchar" MaxLength="20" />
+    <Property Name="znamec" Type="varchar" MaxLength="100" />
+    <Property Name="zsequence" Type="int" />
+    <Property Name="ztype" Type="varchar" MaxLength="20" />
+    <Property Name="znamee" Type="varchar" MaxLength="100" />
+    <Property Name="zucode_p" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="zucode" Type="varchar" MaxLength="20" />
+    <Property Name="ste_no" Type="varchar" MaxLength="20" />
+    <Property Name="znamec" Type="varchar" MaxLength="50" />
+    <Property Name="limit_dt" Type="smalldatetime" />
+    <Property Name="exp_dt" Type="smalldatetime" />
+    <Property Name="com_type" Type="varchar" MaxLength="10" />
+    <Property Name="com_Level" Type="varchar" MaxLength="2" />
+    <Property Name="ientry_type" Type="varchar" MaxLength="1" />
+    <Property Name="oentry_type" Type="varchar" MaxLength="1" />
+    <Property Name="zx_yn" Type="int" />
+    <Property Name="seal_pic" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="100" />
+    <Property Name="tel" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InterData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="way" Type="varchar" MaxLength="10" />
+    <Property Name="upper" Type="varchar" MaxLength="20" />
+    <Property Name="lower" Type="varchar" MaxLength="50" />
+    <Property Name="handler" Type="varchar" MaxLength="50" />
+    <Property Name="create_dt" Type="datetime" />
+    <Property Name="contents" Type="text" />
+  </EntityType>
+  <EntityType Name="Stcodes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ver_ts" Type="int" />
+    <Property Name="code_ts" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="g_name" Type="varchar" MaxLength="255" />
+    <Property Name="control" Type="varchar" MaxLength="50" />
+    <Property Name="unit_no" Type="varchar" MaxLength="50" />
+    <Property Name="sunit_no" Type="varchar" MaxLength="50" />
+    <Property Name="low_rate" Type="varchar" MaxLength="50" />
+    <Property Name="high_rate" Type="varchar" MaxLength="50" />
+    <Property Name="tax_type" Type="varchar" MaxLength="50" />
+    <Property Name="tax_rate" Type="varchar" MaxLength="50" />
+    <Property Name="note_s" Type="varchar" MaxLength="255" />
+    <Property Name="BEGIN_DATE" Type="varchar" MaxLength="50" />
+    <Property Name="END_DATE" Type="varchar" MaxLength="50" />
+    <Property Name="LSJM_FLAG" Type="varchar" MaxLength="50" />
+    <Property Name="TARIFF_MARK" Type="varchar" MaxLength="255" />
+    <Property Name="DUTY_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_V_LOW_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_V_HIGH_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_Q_LOW_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_Q_HIGH_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_UNIT_FLAG" Type="varchar" MaxLength="50" />
+    <Property Name="COM_LOW_CTL_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_HIGH_CTL_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="COM_CTL_CURR" Type="varchar" MaxLength="50" />
+    <Property Name="OUT_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="REG_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="REG_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="REG_Q_LOW_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="REG_Q_HIGH_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="REG_UNIT_FLAG" Type="varchar" MaxLength="50" />
+    <Property Name="REG_CTL_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="REG_CTL_CURR" Type="varchar" MaxLength="50" />
+    <Property Name="TAIWAN_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="OTHER_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="OTHER_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="ILOW_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="IHIGH_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="ELOW_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="EHIGH_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="MAX_IN" Type="varchar" MaxLength="50" />
+    <Property Name="MAX_OUT" Type="varchar" MaxLength="50" />
+    <Property Name="CHK_PRICE" Type="varchar" MaxLength="50" />
+    <Property Name="OUT_DUTY_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="OUT_COM_UNIT_FLAG" Type="varchar" MaxLength="50" />
+    <Property Name="OUT_COM_Q_RATE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Stitems">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="code_ts" Type="varchar" MaxLength="12" />
+    <Property Name="znamec" Type="varchar" MaxLength="50" />
+    <Property Name="sort" Type="int" />
+    <Property Name="need_yn" Type="int" />
+    <Property Name="ver_ts" Type="int" />
+  </EntityType>
+  <EntityType Name="Sys_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Pwd" Type="varchar" MaxLength="300" />
+    <Property Name="Sex" Type="char" MaxLength="1" />
+    <Property Name="Remark" Type="varchar" MaxLength="200" />
+    <Property Name="VerifyCode" Type="varchar" MaxLength="50" />
+    <Property Name="IsValid" Type="char" MaxLength="1" />
+    <Property Name="openId_ibaoguan" Type="varchar" MaxLength="50" />
+    <Property Name="openId_ebaoguan" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Bg_Mains_Bg_Mains">
+    <End Role="Bg_Mains" Type="bgxtModel.Store.Bg_Mains" Multiplicity="1" />
+    <End Role="Bg_Mains1" Type="bgxtModel.Store.Bg_Mains" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Bg_Mains">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bg_Mains1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

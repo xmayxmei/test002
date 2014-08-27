@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bgxtModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="bgxtEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bg_Mains" EntityType="bgxtModel.Bg_Mains" />
+    <EntitySet Name="codeclass" EntityType="bgxtModel.codeclass" />
+    <EntitySet Name="Codes" EntityType="bgxtModel.Codes" />
+    <EntitySet Name="Stcodes" EntityType="bgxtModel.Stcodes" />
+    <EntitySet Name="Sys_Users" EntityType="bgxtModel.Sys_Users" />
+    <AssociationSet Name="FK_Bg_Mains_Bg_Mains" Association="bgxtModel.FK_Bg_Mains_Bg_Mains">
+      <End Role="Bg_Mains" EntitySet="Bg_Mains" />
+      <End Role="Bg_Mains1" EntitySet="Bg_Mains" />
+    </AssociationSet>
+    <EntitySet Name="InterData" EntityType="bgxtModel.InterData" />
+    <EntitySet Name="Stitems" EntityType="bgxtModel.Stitems" />
+    <EntitySet Name="Companies" EntityType="bgxtModel.Companies" />
+  </EntityContainer>
+  <EntityType Name="Bg_Mains">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="organize_id" Type="Int32" />
+    <Property Name="horganize_id" Type="Int32" />
+    <Property Name="dept_id" Type="Int32" />
+    <Property Name="hdept_id" Type="Int32" />
+    <Property Name="platform_id" Type="Int32" />
+    <Property Name="bus_id" Type="Int32" />
+    <Property Name="ef_flag" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="declare_id" Type="Int32" />
+    <Property Name="entry_type" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" />
+    <Property Name="hstatus_id" Type="Int32" />
+    <Property Name="hcustomer_id" Type="Int32" />
+    <Property Name="hcustomer_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="hcustomer_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="hcust_linkman" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="customer_id" Type="Int32" />
+    <Property Name="customer_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="customer_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="cust_linkman" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="records_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="goods_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="indate_dt" Type="DateTime" />
+    <Property Name="apply_dt" Type="DateTime" />
+    <Property Name="apply_no" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="custom_apply_no" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="unify_no" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="verify_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="barcode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="transmode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="factory_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="factory_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="shipper_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="shipper_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="consignee_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="consignee_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="agent_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="agent_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="transname" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="cabin_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="serial_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="trade_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="drawback_no" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="imposemode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="remitmode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="imposepro" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="licence_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="start_country_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="loadport_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="end_country_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="bargainmode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="freightmode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="freight_currency_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="loadport_dt" Type="DateTime" />
+    <Property Name="freight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="subscribemode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="subscribe_currency_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="subscribe" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="incidentalmode_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="incidental_currency_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="incidental" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="contract_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="piece" Type="Int32" />
+    <Property Name="pack_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="grossweight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="netweight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="truck_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="declare_group_id" Type="Int32" />
+    <Property Name="receive_dt" Type="DateTime" />
+    <Property Name="receive_id" Type="Int32" />
+    <Property Name="tally_dt" Type="DateTime" />
+    <Property Name="tally_id" Type="Int32" />
+    <Property Name="end_dt" Type="DateTime" />
+    <Property Name="pass_yn" Type="Byte" />
+    <Property Name="pass_dt" Type="DateTime" />
+    <Property Name="inspect_pass_dt" Type="DateTime" />
+    <Property Name="complete_yn" Type="Byte" />
+    <Property Name="complete_id" Type="Int32" />
+    <Property Name="complete_dt" Type="DateTime" />
+    <Property Name="bus_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="accompany_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="check_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="vessel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="voyage" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="zcd_cbbh" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="zcd_lxr" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="zcd_lxdh" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="book_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="wharf_name" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ship_agent_no" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ship_agent_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="weight" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="drawback_dt" Type="DateTime" />
+    <Property Name="factory" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="entrust_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="container_count" Type="Int32" />
+    <Property Name="num_20" Type="Int32" />
+    <Property Name="num_40" Type="Int32" />
+    <Property Name="mark" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="edi_yn" Type="Int32" />
+    <Property Name="nobook_yn" Type="Int32" />
+    <Property Name="back_yn" Type="Int32" />
+    <Property Name="change_yn" Type="Int32" />
+    <Property Name="trans" Type="Int32" />
+    <Property Name="reprints" Type="Int32" />
+    <Property Name="container_no1" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="zx_yn" Type="Int32" />
+    <Property Name="port_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="import_cabin_id" Type="Int32" />
+    <Property Name="import_cabin_dt" Type="DateTime" />
+    <Property Name="logical_check_id" Type="Int32" />
+    <Property Name="logical_check_dt" Type="DateTime" />
+    <Property Name="audit_by" Type="Int32" />
+    <Property Name="audit_dt" Type="DateTime" />
+    <Property Name="zgd_customer_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="swipe_dt" Type="DateTime" />
+    <Property Name="swipe_by" Type="Int32" />
+    <Property Name="qpstatus" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="tgdstatus" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="cost_note" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="charge_note" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="num_goods" Type="Int32" />
+    <Property Name="zzs_cost" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="gs_cost" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="xfs_cost" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="qts_cost" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="hgcg_count" Type="Int32" />
+    <Property Name="hgcg_20" Type="Int32" />
+    <Property Name="hgcg_40" Type="Int32" />
+    <Property Name="hgcg_cost" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="hgcg_by" Type="Int32" />
+    <Property Name="hgcg_dt" Type="DateTime" />
+    <Property Name="sjcg_count" Type="Int32" />
+    <Property Name="sjcg_20" Type="Int32" />
+    <Property Name="sjcg_40" Type="Int32" />
+    <Property Name="sjcg_cost" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="sjcg_by" Type="Int32" />
+    <Property Name="sjcg_dt" Type="DateTime" />
+    <Property Name="contract_dt" Type="DateTime" />
+    <Property Name="invoice_dt" Type="DateTime" />
+    <Property Name="invoice_no" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="seller_address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="seller_tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="buyers_address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="buyers_tel" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="signed_at" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="vessel2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="voyage2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="boxis" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="jkkxtype" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Bg_Mains1" Relationship="bgxtModel.FK_Bg_Mains_Bg_Mains" FromRole="Bg_Mains" ToRole="Bg_Mains1" />
+    <NavigationProperty Name="Bg_Mains2" Relationship="bgxtModel.FK_Bg_Mains_Bg_Mains" FromRole="Bg_Mains1" ToRole="Bg_Mains" />
+  </EntityType>
+  <EntityType Name="codeclass">
+    <Key>
+      <PropertyRef Name="ZID" />
+    </Key>
+    <Property Name="ZID" Type="Int32" Nullable="false" />
+    <Property Name="ZUCODE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ZNAMEC" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+    <Property Name="ZIMGID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Codes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="zclass_id" Type="Int32" />
+    <Property Name="zucode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="znamec" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="zsequence" Type="Int32" />
+    <Property Name="ztype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="znamee" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="zucode_p" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Stcodes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ver_ts" Type="Int32" />
+    <Property Name="code_ts" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="g_name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="control" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="unit_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sunit_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="low_rate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="high_rate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="tax_type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="tax_rate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="note_s" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="BEGIN_DATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="END_DATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LSJM_FLAG" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TARIFF_MARK" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DUTY_TYPE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_V_LOW_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_V_HIGH_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_Q_LOW_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_Q_HIGH_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_UNIT_FLAG" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_LOW_CTL_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_HIGH_CTL_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="COM_CTL_CURR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OUT_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_TYPE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_Q_LOW_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_Q_HIGH_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_UNIT_FLAG" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_CTL_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="REG_CTL_CURR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TAIWAN_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OTHER_TYPE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OTHER_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ILOW_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IHIGH_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ELOW_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EHIGH_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MAX_IN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MAX_OUT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CHK_PRICE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OUT_DUTY_TYPE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OUT_COM_UNIT_FLAG" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OUT_COM_Q_RATE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Pwd" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="Sex" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="Remark" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="VerifyCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsValid" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Type="String" Name="openId_ibaoguan" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="openId_ebaoguan" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Bg_Mains_Bg_Mains">
+    <End Role="Bg_Mains" Type="bgxtModel.Bg_Mains" Multiplicity="1" />
+    <End Role="Bg_Mains1" Type="bgxtModel.Bg_Mains" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Bg_Mains">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Bg_Mains1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="InterData">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="way" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="upper" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="lower" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="handler" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="create_dt" />
+    <Property Type="String" Name="contents" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Stitems">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="code_ts" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="znamec" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="sort" />
+    <Property Type="Int32" Name="need_yn" />
+    <Property Type="Int32" Name="ver_ts" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="zucode" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ste_no" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="znamec" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="limit_dt" />
+    <Property Type="DateTime" Name="exp_dt" />
+    <Property Type="String" Name="com_type" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="com_Level" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ientry_type" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="oentry_type" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="zx_yn" />
+    <Property Type="String" Name="seal_pic" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="address" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tel" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>
