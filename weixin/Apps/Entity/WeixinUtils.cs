@@ -87,7 +87,7 @@ namespace Weixin.Apps.Entity
         public static string postMessage2UrlByToken(string token, string message)
         {
             string url = WeixinConstant.TEN_WX_POST_URL;
-            url = url.Replace("\\{accessToken\\}", WeixinConstant.ACCESS_TOKEN);
+            url = url.Replace("\\{accessToken\\}", token);
             byte[] sendData = Encoding.GetEncoding("UTF-8").GetBytes(message.ToString());
             WebClient client = new WebClient();
             byte[] recData = client.UploadData(url, "POST", sendData);

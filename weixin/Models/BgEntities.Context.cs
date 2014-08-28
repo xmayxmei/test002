@@ -12,24 +12,26 @@ namespace Weixin.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.ModelConfiguration.Conventions;
     
     public partial class bgxtEntities : DbContext
     {
         public bgxtEntities()
-            : base("name=bgEntities")
+            : base("name=bgxtEntities")
         {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            throw new UnintentionalCodeFirstException();
         }
     
         public DbSet<Bg_Mains> Bg_Mains { get; set; }
-        //public DbSet<codeclass> codeclass { get; set; }
+        public DbSet<codeclass> codeclass { get; set; }
         public DbSet<Codes> Codes { get; set; }
         public DbSet<Stcodes> Stcodes { get; set; }
-        //public DbSet<Sys_Users> Sys_Users { get; set; }
+        public DbSet<Sys_Users> Sys_Users { get; set; }
         public DbSet<InterData> InterData { get; set; }
         public DbSet<Stitems> Stitems { get; set; }
         public DbSet<Companies> Companies { get; set; }

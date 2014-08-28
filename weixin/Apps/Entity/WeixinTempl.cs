@@ -19,35 +19,17 @@ namespace Weixin.Apps.Entity
     {
         static string BIANMA_TMPL = "HS编码：{code_ts}\n商品名称：{g_name}\n备注：{note_s}\n海关监管条件：{control} \n申报要素：{tax_type}\n法一单位：{unit_no}\n法二单位：{sunit_no}\n进口最惠国税率：{low_rate}\n普通税率：{high_rate}\n增值税率：{tax_rate}";
 
-        static string YOUXIAOQI_TMPL = "公司名称：{name}\n海关编码：{code}\n报关类别：{com_type}\n等级：{com_Level}\n有效日期：{limit_dt}\n通关期限：{exp_dt}";
-
-        static string CUST_TOTAL_TMPL = "公司名：{cust_name}，您{apply_dt}在{decl_name}总计{count_total}份报关单。其中：" +
-                "\n清关出口{count_exp}份，清关进口{count_imp}份，转关进口{count_trans_imp}份，转关出口{count_trans_exp}份，属地岸放{count_locat}份。" +
-                "\n当日已放行{count_pass}份，海关查验{count_hgcheck}份，商检查验{count_sjcheck}份，截止{now_time}累计未放行{count_unpass}份。" +
-                "\n查验的柜号如下：{list_check}，未放行的柜号如下：{list_unpass}。";
-
-        static string ORG_DAILY_TMPL = "公司名：{decl_name}，您{apply_dt}日总计{count_total}份报关单。其中：" +
-                "\n清关出口{count_exp}份，清关进口{count_imp}份，转关进口{count_trans_imp}份，转关出口{count_trans_exp}份，属地岸放{count_locat}份。" +
-                "\n当日已放行{count_pass}份，海关查验{count_hgcheck}份，商检查验{count_sjcheck}份，截止{now_time}累计未放行{count_unpass}份。" +
-                "\n查验的柜号如下：{list_check}，未放行的柜号如下：{list_unpass}。";
-
-        static string ORG_WEEK_TMPL = "公司名：{decl_name}，您{apply_dt}日到{apply_dt2}日总计{count_total}份报关单。其中：" +
-                "\n清关出口{count_exp}份，清关进口{count_imp}份，转关进口{count_trans_imp}份，转关出口{count_trans_exp}份，属地岸放{count_locat}份。" +
-                "\n海关查验{count_hgcheck}份，商检查验{count_sjcheck}份。";
-
-        static string ORG_MONTH_TMPL = "公司名：{decl_name}，您{apply_dt}日到{apply_dt2}日总计{count_total}份报关单。其中：" +
-                "\n清关出口{count_exp}份，清关进口{count_imp}份，转关进口{count_trans_imp}份，转关出口{count_trans_exp}份，属地岸放{count_locat}份。" +
-                "\n海关查验{count_hgcheck}份，商检查验{count_sjcheck}份。";
+       
 
         /// <summary>
         /// 实例化消息，对模板进行转换为发送到腾讯微信服务器的XML文本
         /// </summary>
         /// <param name="weixinVO"></param>
         /// <returns></returns>
-        public static string makeMessage(WeixinVO weixinVO)
+        public static string makeReplyMessage(WeixinVO weixinVO)
         {
             //获取消息模板
-            string messageTmpl = getMessageTmpl(weixinVO);
+            string messageTmpl = getReplyMessageTmpl(weixinVO);
             //消息模板实例化
             messageTmpl = Regex.Replace(messageTmpl, "\\{toUser\\}", weixinVO.ToUserName == null ? "" : weixinVO.ToUserName);
             messageTmpl = Regex.Replace(messageTmpl, "\\{fromUser\\}", weixinVO.FromUserName == null ? "" : weixinVO.FromUserName);
@@ -117,7 +99,7 @@ namespace Weixin.Apps.Entity
         /// </summary>
         /// <param name="weixinVO"></param>
         /// <returns></returns>
-        public static string getMessageTmpl(WeixinVO weixinVO)
+        public static string getReplyMessageTmpl(WeixinVO weixinVO)
         {
             string messageTmpl = null;
 
@@ -219,67 +201,7 @@ namespace Weixin.Apps.Entity
             messageTmpl = Regex.Replace(messageTmpl, "\\{tax_rate\\}", stcode.tax_rate == null ? "" :(Double.Parse(stcode.tax_rate)>0?(Double.Parse(stcode.tax_rate)*100).ToString()+"%":"0"));
             return messageTmpl;
         }
-        /// <summary>
-        /// 有效期模板转换为内容
-        /// //华为技术有限公司|4403950010|自理报关|0|2040-4-9|2014-4-11
-        /// </summary>
-        /// <param name="companie"></param>
-        /// <returns></returns>
-        public static string covtYouxq2PostStr(Companies companie)
-        {
-            string messageTmpl = YOUXIAOQI_TMPL;
-            messageTmpl = Regex.Replace(messageTmpl, "\\{name\\}", companie.znamec == null ? "" : companie.znamec);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{code\\}", companie.zucode == null ? "" : companie.zucode);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{com_type\\}", companie.com_type == null ? "" : companie.com_type);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{com_Level\\}", companie.com_Level == null ? "" : WeixinUtils.converLevel(companie.com_Level));
-            messageTmpl = Regex.Replace(messageTmpl, "\\{limit_dt\\}", companie.limit_dt == null ? "" : ((DateTime)companie.limit_dt).ToString("yyyy-MM-dd"));
-            messageTmpl = Regex.Replace(messageTmpl, "\\{exp_dt\\}", companie.exp_dt == null ? "" : ((DateTime)companie.exp_dt).ToString("yyyy-MM-dd"));
-            return messageTmpl;
-        }
-
-        /// <summary>
-        /// 客户每日小结模板转换为内容
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        public static string covtDailyCounter2PostStr(int conditionKind, object[] result,string apply_dt, string apply_dt2)
-        {
-            string messageTmpl = CUST_TOTAL_TMPL;
-            if(conditionKind == WeixinConstant.CLAUSE_ORG_DAILY){
-                messageTmpl = ORG_DAILY_TMPL;
-            }
-            else if (conditionKind == WeixinConstant.CLAUSE_ORG_DAILY)
-            {
-                messageTmpl = ORG_DAILY_TMPL;
-            }
-            else if (conditionKind == WeixinConstant.CLAUSE_ORG_WEEK)
-            {
-                messageTmpl = ORG_WEEK_TMPL;
-            }
-            else if (conditionKind == WeixinConstant.CLAUSE_ORG_MONTH)
-            {
-                messageTmpl = ORG_MONTH_TMPL;
-            }
-            string now_time = DateTime.Now.ToString("yyyy-MM-dd日HH:mm分");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{cust_name\\}", (string)result[1]);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{decl_name\\}", (string)result[2]); 
-            messageTmpl = Regex.Replace(messageTmpl, "\\{apply_dt\\}", apply_dt);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{apply_dt2\\}", apply_dt2);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_total\\}", (int)result[3]+"");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_exp\\}", (int)result[4] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_imp\\}", (int)result[5] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_trans_imp\\}", (int)result[6] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_trans_exp\\}", (int)result[7] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_locat\\}", (int)result[8] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_pass\\}", (int)result[9] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_unpass\\}", (int)result[10] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_hgcheck\\}", (int)result[11] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{count_sjcheck\\}", (int)result[12] + "");
-            messageTmpl = Regex.Replace(messageTmpl, "\\{now_time\\}", now_time);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{list_check\\}", "".Equals((string)result[13]) ? "无" : (string)result[13]);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{list_unpass\\}", "".Equals((string)result[14]) ? "无" : (string)result[14]);
-            return messageTmpl;
-        }
+      
         /// <summary>
         /// 报关单状态模板转换为内容
         /// </summary>

@@ -52,8 +52,8 @@ namespace Weixin.Apps.Entity
             
             WeixinVO lowerWeixin= searchResult(parsedContent);//抓取数据返回给用户
             WeixinVO rtnWeixin = getLowerWeixin(lowerWeixin, upperWeixin);//根据上游消息，对下游消息处理
-            
-            string rtnStr = WeixinTempl.makeMessage(rtnWeixin);
+
+            string rtnStr = WeixinTempl.makeReplyMessage(rtnWeixin);
             return rtnStr;
         }
         
@@ -161,29 +161,6 @@ namespace Weixin.Apps.Entity
             lowerWeixin.CreateTime = WeixinUtils.convertDateTimeInt(System.DateTime.Now) + "";
             return lowerWeixin;
         }
-        /// <summary>
-        /// 获取公司统计数据
-        /// </summary>
-        /// <param name="fromUserName"></param>
-        /// <param name="apply_dt"></param>
-        /// <param name="apply_dt2"></param>
-        /// <returns></returns>
-        public string countCompByEmp(int clauseKind, string fromUserName, string apply_dt, string apply_dt2)
-        {
-            string result = null;
-            List<object[]> resultList = new BaoguanService().countCompByEmp(clauseKind, fromUserName, apply_dt, apply_dt2);
-            if (resultList != null && resultList.Count > 0)
-            {
-                foreach (object[] r in resultList)
-                {
-                    result = WeixinTempl.covtDailyCounter2PostStr(clauseKind, r, apply_dt, apply_dt2);
-                }
-            }
-            else
-            {
-                result = resultMsg[3] + getYunBind(fromUserName);
-            }
-            return result;
-        }
+        
     }
 }

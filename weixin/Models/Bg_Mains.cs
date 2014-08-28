@@ -165,5 +165,8 @@ namespace Weixin.Models
         public string voyage2 { get; set; }
         public string boxis { get; set; }
         public string jkkxtype { get; set; }
+    
+        public virtual Bg_Mains Bg_Mains1 { get; set; }
+        public virtual Bg_Mains Bg_Mains2 { get; set; }
     }
 }

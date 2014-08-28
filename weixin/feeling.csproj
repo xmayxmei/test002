@@ -110,7 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Apps\Entity\BaoguanUtils.cs" />
+    <Compile Include="Apps\Entity\WeixinUtils.cs" />
     <Compile Include="Apps\Entity\TokenVO.cs" />
     <Compile Include="Apps\Entity\WeixinConstant.cs" />
     <Compile Include="Apps\Entity\WeixinPush.cs" />
@@ -119,10 +119,10 @@
     <Compile Include="Apps\Entity\WeixinTempl.cs" />
     <Compile Include="Apps\Entity\WeixinVO.cs" />
     <Compile Include="Apps\Entity\WeixinToken.cs" />
-    <Compile Include="Apps\Outer\Weixin\Yunbaoguan.ashx.cs">
-      <DependentUpon>Yunbaoguan.ashx</DependentUpon>
+    <Compile Include="Apps\Outer\Weixin\feeling.ashx.cs">
+      <DependentUpon>feeling.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Apps\Service\BaoguanService.cs" />
+    <Compile Include="Apps\Service\ActService.cs" />
     <Compile Include="Common\DBHelp.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Global.asax.cs">
@@ -193,7 +193,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Apps\Outer\Weixin\Yunbaoguan.ashx" />
+    <Content Include="Apps\Outer\Weixin\feeling.ashx" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\bgdb.edmx">

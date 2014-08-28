@@ -933,7 +933,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="bgdb" ZoomLevel="72">
+      <Diagram Name="bgdb" ZoomLevel="127">
         <EntityTypeShape EntityType="bgxtModel.Bg_Mains" Width="1.5" PointX="0.75" PointY="0.75" Height="26.7465625" IsExpanded="true" />
         <EntityTypeShape EntityType="bgxtModel.codeclass" Width="1.5" PointX="2.75" PointY="0.75" Height="1.6222135416666674" IsExpanded="true" />
         <EntityTypeShape EntityType="bgxtModel.Codes" Width="1.5" PointX="2.75" PointY="3.75" Height="2.2966927083333335" IsExpanded="true" />

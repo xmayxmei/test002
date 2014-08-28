@@ -13,10 +13,22 @@ namespace Weixin.Apps.Service
     /// <summary>
     /// 报关业务数据查询
     /// </summary>
-    public class BaoguanService
+    public class ActService
     {
         private Models.bgxtEntities mdb = new Models.bgxtEntities();
+        
+        /// <summary>
+        /// 收到消息后，验证消息，然后。。
+        //  1解析消息，2查找他的那个对象(分2种情况)
+        //（如有对象）3、消息过滤，4转发消息。
+        //（如无对象）3、男，回复查找信息，4女，回复加入或管理界面、或保存图片。
+        /// </summary>
+        /// <param name="postStr"></param>
+        public void a(string postStr) {
+            WeixinVO weixinVO = new WeixinReceiver().parseMessager(postStr);
 
+            
+        }
         /// <summary>
         /// 根据微信id取该用户一段时间的报关汇总数据
         /// </summary>

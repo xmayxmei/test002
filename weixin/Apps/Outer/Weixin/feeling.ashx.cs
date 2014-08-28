@@ -10,13 +10,10 @@ namespace bgweb.Apps.Outer.Weixin
     /// <summary>
     /// 云报关baoguanyunclass对微信接口
     /// </summary>
-    public class Yunbaoguan : IHttpHandler
+    public class Feeling : IHttpHandler
     {
         HttpContext context = null;
         string postStr = "";
-        public static string TOKEN = "loveyou"; //"fuckyou";
-        public static string APPID = "wx6f2970709fa1a097";        //"wx6b07bfbd730a9028";
-        public static string APPSECRET = "4277df640169c96f714d0af6d5e1e4c9";    //"27d614e83a42042b31e24faeaa680963";
         
         /// <summary>
         /// 响应
@@ -37,6 +34,7 @@ namespace bgweb.Apps.Outer.Weixin
                 //收到消息后返回信息
                 if (!string.IsNullOrEmpty(postStr))
                 {
+                   
                     string responseMsg = new WeixinSender().replyResponse(postStr);
                     WeixinUtils.WriteLog("OUT: " + responseMsg);
                     context.Response.Write(responseMsg);
@@ -77,7 +75,7 @@ namespace bgweb.Apps.Outer.Weixin
         /// <returns></returns>
         public bool checkSignature(string signature, string timestamp, string nonce)
         {
-            string[] ArrTmp = { TOKEN, timestamp, nonce };
+            string[] ArrTmp = { WeixinToken.tokenvo.token, timestamp, nonce };
             Array.Sort(ArrTmp);     //字典排序
             string tmpStr = string.Join("", ArrTmp);
             tmpStr = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(tmpStr, "SHA1");

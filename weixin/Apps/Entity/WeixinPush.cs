@@ -26,11 +26,11 @@ namespace Weixin.Apps.Entity
             String message = WeixinTempl.covtDailyCounter2PostStr(0,result,"","");
             lowerWeixin.Content = message;
             //取模板匹配模板(准备要发送的数据)
-            string messageTmpl = WeixinTempl.makePushMessage(lowerWeixin);
+            string messageByTmpl = WeixinTempl.makePushMessage(lowerWeixin);
             //获取token
-            string token = WeixinToken.getAccessToken();
+            string token = WeixinConstant.ACCESS_TOKEN;
             //推送消息
-            WeixinUtils.postMessage2Url(token, messageTmpl);
+            WeixinUtils.postMessage2UrlByToken(token, messageByTmpl);
         }
     }
 }
