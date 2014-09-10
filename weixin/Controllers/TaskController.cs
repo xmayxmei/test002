@@ -23,7 +23,7 @@ namespace Weixin.Controllers
         }
         //批量发送消息
         public void sendMessageRepeat() {
-            List<object[]> resultList = new ActService().countCompByEmp(0,null,null,null);
+            List<object[]> resultList = null;
             if (resultList != null && resultList.Count > 0) {
                 foreach (object[] result in resultList)
                 {

@@ -9,13 +9,14 @@ namespace Weixin.Apps.Entity
     /// token实体
     /// </summary>
     public static class WeixinToken
-    {
+    { 
+       
         public static TokenVO tokenvo = null;
         
         /// <summary>
         /// 配置文件读取tokenvo;
         /// </summary>
-        private WeixinToken()
+        static WeixinToken()
         {
             if (tokenvo == null)
             {
@@ -26,7 +27,6 @@ namespace Weixin.Apps.Entity
                 tokenvo.appSecret = (string)weixinSettings["appSecret"];
             }
         }
-        
         /// <summary>
         /// 获取AccessToken
         /// </summary>

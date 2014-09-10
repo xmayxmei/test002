@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="feelingModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="We_Cost">
+      <EntityTypeMapping TypeName="feelingModel.We_Cost">
+        <MappingFragment StoreEntitySet="We_Cost">
+          <ScalarProperty Name="cost_id" ColumnName="cost_id" />
+          <ScalarProperty Name="cost_no" ColumnName="cost_no" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="obj_no" ColumnName="obj_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="We_Dict">
+      <EntityTypeMapping TypeName="feelingModel.We_Dict">
+        <MappingFragment StoreEntitySet="We_Dict">
+          <ScalarProperty Name="dict_id" ColumnName="dict_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dis_name" ColumnName="dis_name" />
+          <ScalarProperty Name="parent_path" ColumnName="parent_path" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="We_Message">
+      <EntityTypeMapping TypeName="feelingModel.We_Message">
+        <MappingFragment StoreEntitySet="We_Message">
+          <ScalarProperty Name="message_id" ColumnName="message_id" />
+          <ScalarProperty Name="fromUser" ColumnName="fromUser" />
+          <ScalarProperty Name="toUser" ColumnName="toUser" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="origin" ColumnName="origin" />
+          <ScalarProperty Name="msgtype" ColumnName="msgtype" />
+          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="msgContent" ColumnName="msgContent" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="We_Order">
+      <EntityTypeMapping TypeName="feelingModel.We_Order">
+        <MappingFragment StoreEntitySet="We_Order">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="customer" ColumnName="customer" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+          <ScalarProperty Name="pay_status" ColumnName="pay_status" />
+          <ScalarProperty Name="ord_amount" ColumnName="ord_amount" />
+          <ScalarProperty Name="pay_amount" ColumnName="pay_amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="order_time" ColumnName="order_time" />
+          <ScalarProperty Name="start_time" ColumnName="start_time" />
+          <ScalarProperty Name="end_time" ColumnName="end_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="We_Resource">
+      <EntityTypeMapping TypeName="feelingModel.We_Resource">
+        <MappingFragment StoreEntitySet="We_Resource">
+          <ScalarProperty Name="resource_id" ColumnName="resource_id" />
+          <ScalarProperty Name="creator" ColumnName="creator" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="cata" ColumnName="cata" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="media_path" ColumnName="media_path" />
+          <ScalarProperty Name="thb_media_path" ColumnName="thb_media_path" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="We_User">
+      <EntityTypeMapping TypeName="feelingModel.We_User">
+        <MappingFragment StoreEntitySet="We_User">
+          <ScalarProperty Name="openid" ColumnName="openid" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+          <ScalarProperty Name="subscribe_time" ColumnName="subscribe_time" />
+          <ScalarProperty Name="unionid" ColumnName="unionid" />
+          <ScalarProperty Name="kind" ColumnName="kind" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="serv_auth" ColumnName="serv_auth" />
+          <ScalarProperty Name="serv_price" ColumnName="serv_price" />
+          <ScalarProperty Name="pay_total" ColumnName="pay_total" />
+          <ScalarProperty Name="cost_total" ColumnName="cost_total" />
+          <ScalarProperty Name="remn_amount" ColumnName="remn_amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

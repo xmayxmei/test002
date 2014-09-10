@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="feelingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="feelingModelStoreContainer">
+    <EntitySet Name="We_Cost" EntityType="feelingModel.Store.We_Cost" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="We_Dict" EntityType="feelingModel.Store.We_Dict" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="We_Message" EntityType="feelingModel.Store.We_Message" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="We_Order" EntityType="feelingModel.Store.We_Order" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="We_Resource" EntityType="feelingModel.Store.We_Resource" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="We_User" EntityType="feelingModel.Store.We_User" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="We_Cost">
+    <Key>
+      <PropertyRef Name="cost_id" />
+    </Key>
+    <Property Name="cost_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cost_no" Type="varchar" MaxLength="50" />
+    <Property Name="creator" Type="varchar" MaxLength="50" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="kind" Type="varchar" MaxLength="20" />
+    <Property Name="amount" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="obj_no" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="We_Dict">
+    <Key>
+      <PropertyRef Name="dict_id" />
+    </Key>
+    <Property Name="dict_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="varchar" MaxLength="200" />
+    <Property Name="dis_name" Type="varchar" MaxLength="255" />
+    <Property Name="parent_path" Type="varchar" MaxLength="255" />
+    <Property Name="value" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="We_Message">
+    <Key>
+      <PropertyRef Name="message_id" />
+    </Key>
+    <Property Name="message_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fromUser" Type="varchar" MaxLength="50" />
+    <Property Name="toUser" Type="varchar" MaxLength="50" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="origin" Type="varchar" MaxLength="1" />
+    <Property Name="msgtype" Type="varchar" MaxLength="20" />
+    <Property Name="event" Type="varchar" MaxLength="20" />
+    <Property Name="msgContent" Type="text" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="We_Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customer" Type="varchar" MaxLength="50" />
+    <Property Name="vendor" Type="varchar" MaxLength="50" />
+    <Property Name="pay_status" Type="varchar" MaxLength="1" />
+    <Property Name="ord_amount" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="pay_amount" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="order_time" Type="datetime" />
+    <Property Name="start_time" Type="datetime" />
+    <Property Name="end_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="We_Resource">
+    <Key>
+      <PropertyRef Name="resource_id" />
+    </Key>
+    <Property Name="resource_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="creator" Type="varchar" MaxLength="50" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="cata" Type="varchar" MaxLength="20" />
+    <Property Name="kind" Type="varchar" MaxLength="20" />
+    <Property Name="name" Type="varchar" MaxLength="50" />
+    <Property Name="media_path" Type="varchar" MaxLength="500" />
+    <Property Name="thb_media_path" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="We_User">
+    <Key>
+      <PropertyRef Name="openid" />
+    </Key>
+    <Property Name="openid" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="nickname" Type="varchar" MaxLength="20" />
+    <Property Name="sex" Type="varchar" MaxLength="20" />
+    <Property Name="city" Type="varchar" MaxLength="20" />
+    <Property Name="country" Type="varchar" MaxLength="20" />
+    <Property Name="province" Type="varchar" MaxLength="20" />
+    <Property Name="language" Type="varchar" MaxLength="20" />
+    <Property Name="headimgurl" Type="varchar" MaxLength="255" />
+    <Property Name="subscribe_time" Type="datetime" />
+    <Property Name="unionid" Type="varchar" MaxLength="20" />
+    <Property Name="kind" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="serv_auth" Type="varchar" MaxLength="200" />
+    <Property Name="serv_price" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="pay_total" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="cost_total" Type="numeric" Precision="10" Scale="2" />
+    <Property Name="remn_amount" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+</Schema>

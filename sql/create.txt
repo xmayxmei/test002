@@ -1,0 +1,108 @@
+--用户信息（个人基本，交友基本）
+create table We_User(
+	openid varchar(50) primary key, --用户的标识，对当前公众号唯一userid
+	nickname varchar(20), --用户的昵称
+	sex varchar(20), --用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+	city varchar(20), --用户所在城市
+	country varchar(20), --用户所在国家
+	province varchar(20), --用户所在省份
+	language varchar(20), --用户的语言，简体中文为zh_CN
+	headimgurl varchar(255), --用户头像
+	subscribe_time datetime, --用户关注时间，为时间戳。如果用户曾多次关注，则取最后关注时间
+	unionid varchar(20), --只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。
+	kind varchar(20), -- (sysu管理用户，cust客户，vendor供应人)如果加入，更新此状态为2
+	status varchar(1), -- (0未关注，1已关注，2隐身，3黑名单)如果重复关注，更新此状态0-1。
+	serv_auth varchar(200), --服务授权(多字段0，1,如【0,1,1,1,0】，表示文字，语音，图片，视频，地理位置是否服务授权)
+	serv_price  Numeric(10,2), --服务价格
+	pay_total Numeric(10,2), --充值总额
+	cost_total Numeric(10,2),--消费总额
+	remn_amount  Numeric(10,2),--剩余额
+);
+
+
+--订单（）
+create table We_Order(
+	order_id int identity (1,1) primary key,
+	customer varchar(50), -- 客户
+	vendor varchar(50), --（供应人）
+	pay_status varchar(1),--0未支付，1已支付,3已退款
+	ord_amount Numeric(10,2),--订单金额
+	pay_amount Numeric(10,2),--支付金额
+	status varchar(1),--状态(0新单，1已审核，2已拒绝，3已取消，4已接受，5已暂停，6进行中，7已结束。)
+	serv_auth varchar(200), --服务授权(多字段text，1,如【text,voice,vedio】，表示文字，语音，图片，视频，地理位置是否服务授权)
+	duration int,--订单时长（天）
+	order_time datetime,--下单时间
+	start_time datetime,--开始时间
+	end_time datetime,--结束时间
+);
+
+--上下行（关联订单）
+create table We_Message(
+	message_id int identity (1,1) primary key,
+	origin varchar(1),--消息来源，//1买方发送，2转发卖方，3卖方发送，4转发买方，5腾讯，6系统发送买方，7系统发送卖方
+	msgContent text,--消息内容（全部数据，xml或json）
+	status varchar(1),--状态，0已接收，1已回复，2已发送，3发送失败。（发送或接收的消息，整体，分解（解析），单表）
+	MsgId  varchar(20),--解析的media_id
+	fromUser varchar(50),--发送人
+	toUser varchar(50),--接收人
+	create_time datetime,--创建时间
+	msgtype varchar(20),--消息类型
+	event  varchar(20),--事件类型（若为事件消息）
+	MediaId  varchar(20),--媒体id(图片，语音，视频)
+	ThumbMediaId  varchar(20),--视频消息缩略图的媒体id
+	picurl  varchar(20),--图片链接
+	Format  varchar(20),--语音格式
+	Location_X  varchar(20),--地理位置维度
+	Location_Y  varchar(20),--地理位置经度
+	Scale  varchar(20),--地图缩放大小
+	Label  varchar(20),--地理位置信息
+	Title  varchar(20),--链接消息标题
+	Description  varchar(20),--链接消息描述
+	Url  varchar(20),--链接消息链接
+	MusicUrl  varchar(20),--
+	HQMusicUrl  varchar(20),--
+	EventKey  varchar(20),--事件KEY值
+	Ticket  varchar(20),--二维码的ticket
+	Latitude  varchar(20),--上报地理位置纬度
+	Longitude  varchar(20),--上报地理位置经度
+	Precision  varchar(20),--上报地理位置精度
+	Recognition  varchar(20),--语音识别结果
+	media_path  varchar(255),--
+	thb_media_path  varchar(255),--
+	
+)
+
+--充值消费记录（）
+create table We_Cost(
+	cost_id int identity (1,1) primary key,
+	cost_no varchar(50),--消费单号(第三方支付系统)
+	creator varchar(50),--创建人
+	create_time datetime,--创建时间
+	kind varchar(20),--充值或消费deposit，cost
+	amount Numeric(10,2),--金额
+	obj_no varchar(50),--消费对象（订单或商品）
+)
+
+
+
+--用户资料（图片、视频、语音、地理位置）
+create table We_Resource(
+ 	resource_id int identity (1,1) primary key, --资源ID
+	creator varchar(50),-- 创建人(拥有人)	
+	create_time datetime, --上传时间
+	cata varchar(20),-- 资源类别 （0客户资料，1）
+ 	kind varchar(20), --资源类型（文本text、图片image、语音voice、视频video、地理位置location，链接消息link）
+	name varchar(50), -- 资源名称
+ 	media_path varchar(500), -- 资源路径或内容
+	thb_media_path varchar(255), -- 缩略图路径
+ 	status varchar(1), -- 状态(0未审核，1已审核，2已删除，3系统记录)
+	update_time datetime, --修改时间
+);
+create table We_Dict(
+	dict_id int identity (1,1) primary key,
+	name varchar(200),--定义名称
+	dis_name varchar(255),--显示名
+	parent_path varchar(255),--父路径
+	value varchar(500),--值
+)
+--HTTP来源微信：http://my.oschina.net/ecnu/blog/224871

@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="feelingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="feelingModelStoreContainer">
+          <EntitySet Name="We_Cost" EntityType="feelingModel.Store.We_Cost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="We_Dict" EntityType="feelingModel.Store.We_Dict" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="We_Message" EntityType="feelingModel.Store.We_Message" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="We_Order" EntityType="feelingModel.Store.We_Order" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="We_Resource" EntityType="feelingModel.Store.We_Resource" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="We_User" EntityType="feelingModel.Store.We_User" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="We_Cost">
+          <Key>
+            <PropertyRef Name="cost_id" />
+          </Key>
+          <Property Name="cost_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="cost_no" Type="varchar" MaxLength="50" />
+          <Property Name="creator" Type="varchar" MaxLength="50" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="kind" Type="varchar" MaxLength="20" />
+          <Property Name="amount" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="obj_no" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="We_Dict">
+          <Key>
+            <PropertyRef Name="dict_id" />
+          </Key>
+          <Property Name="dict_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="200" />
+          <Property Name="dis_name" Type="varchar" MaxLength="255" />
+          <Property Name="parent_path" Type="varchar" MaxLength="255" />
+          <Property Name="value" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="We_Message">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fromUser" Type="varchar" MaxLength="50" />
+          <Property Name="toUser" Type="varchar" MaxLength="50" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="origin" Type="varchar" MaxLength="1" />
+          <Property Name="msgtype" Type="varchar" MaxLength="20" />
+          <Property Name="event" Type="varchar" MaxLength="20" />
+          <Property Name="msgContent" Type="text" />
+          <Property Name="status" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="We_Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customer" Type="varchar" MaxLength="50" />
+          <Property Name="vendor" Type="varchar" MaxLength="50" />
+          <Property Name="pay_status" Type="varchar" MaxLength="1" />
+          <Property Name="ord_amount" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="pay_amount" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="status" Type="varchar" MaxLength="1" />
+          <Property Name="order_time" Type="datetime" />
+          <Property Name="start_time" Type="datetime" />
+          <Property Name="end_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="We_Resource">
+          <Key>
+            <PropertyRef Name="resource_id" />
+          </Key>
+          <Property Name="resource_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="creator" Type="varchar" MaxLength="50" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="cata" Type="varchar" MaxLength="20" />
+          <Property Name="kind" Type="varchar" MaxLength="20" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="media_path" Type="varchar" MaxLength="500" />
+          <Property Name="thb_media_path" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="varchar" MaxLength="1" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="We_User">
+          <Key>
+            <PropertyRef Name="openid" />
+          </Key>
+          <Property Name="openid" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="nickname" Type="varchar" MaxLength="20" />
+          <Property Name="sex" Type="varchar" MaxLength="20" />
+          <Property Name="city" Type="varchar" MaxLength="20" />
+          <Property Name="country" Type="varchar" MaxLength="20" />
+          <Property Name="province" Type="varchar" MaxLength="20" />
+          <Property Name="language" Type="varchar" MaxLength="20" />
+          <Property Name="headimgurl" Type="varchar" MaxLength="255" />
+          <Property Name="subscribe_time" Type="datetime" />
+          <Property Name="unionid" Type="varchar" MaxLength="20" />
+          <Property Name="kind" Type="varchar" MaxLength="20" />
+          <Property Name="status" Type="varchar" MaxLength="1" />
+          <Property Name="serv_auth" Type="varchar" MaxLength="200" />
+          <Property Name="serv_price" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="pay_total" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="cost_total" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="remn_amount" Type="numeric" Precision="10" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="feelingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="We_Cost" EntityType="feelingModel.We_Cost" />
+          <EntitySet Name="We_Dict" EntityType="feelingModel.We_Dict" />
+          <EntitySet Name="We_Message" EntityType="feelingModel.We_Message" />
+          <EntitySet Name="We_Order" EntityType="feelingModel.We_Order" />
+          <EntitySet Name="We_Resource" EntityType="feelingModel.We_Resource" />
+          <EntitySet Name="We_User" EntityType="feelingModel.We_User" />
+        </EntityContainer>
+        <EntityType Name="We_Cost">
+          <Key>
+            <PropertyRef Name="cost_id" />
+          </Key>
+          <Property Name="cost_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cost_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="creator" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="create_time" Type="DateTime" />
+          <Property Name="kind" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="obj_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="We_Dict">
+          <Key>
+            <PropertyRef Name="dict_id" />
+          </Key>
+          <Property Name="dict_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="dis_name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="parent_path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="value" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="We_Message">
+          <Key>
+            <PropertyRef Name="message_id" />
+          </Key>
+          <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fromUser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="toUser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="create_time" Type="DateTime" />
+          <Property Name="origin" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="msgtype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="event" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="msgContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="We_Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="vendor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="pay_status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="ord_amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="pay_amount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="order_time" Type="DateTime" />
+          <Property Name="start_time" Type="DateTime" />
+          <Property Name="end_time" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="We_Resource">
+          <Key>
+            <PropertyRef Name="resource_id" />
+          </Key>
+          <Property Name="resource_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="creator" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="create_time" Type="DateTime" />
+          <Property Name="cata" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="kind" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="media_path" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="thb_media_path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="update_time" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="We_User">
+          <Key>
+            <PropertyRef Name="openid" />
+          </Key>
+          <Property Name="openid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="nickname" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="province" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="language" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="headimgurl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="subscribe_time" Type="DateTime" />
+          <Property Name="unionid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="kind" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="serv_auth" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="serv_price" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="pay_total" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="cost_total" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="remn_amount" Type="Decimal" Precision="10" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="feelingModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="We_Cost"><EntityTypeMapping TypeName="feelingModel.We_Cost"><MappingFragment StoreEntitySet="We_Cost">
+            <ScalarProperty Name="cost_id" ColumnName="cost_id" />
+            <ScalarProperty Name="cost_no" ColumnName="cost_no" />
+            <ScalarProperty Name="creator" ColumnName="creator" />
+            <ScalarProperty Name="create_time" ColumnName="create_time" />
+            <ScalarProperty Name="kind" ColumnName="kind" />
+            <ScalarProperty Name="amount" ColumnName="amount" />
+            <ScalarProperty Name="obj_no" ColumnName="obj_no" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="We_Dict"><EntityTypeMapping TypeName="feelingModel.We_Dict"><MappingFragment StoreEntitySet="We_Dict">
+            <ScalarProperty Name="dict_id" ColumnName="dict_id" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="dis_name" ColumnName="dis_name" />
+            <ScalarProperty Name="parent_path" ColumnName="parent_path" />
+            <ScalarProperty Name="value" ColumnName="value" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="We_Message"><EntityTypeMapping TypeName="feelingModel.We_Message"><MappingFragment StoreEntitySet="We_Message">
+            <ScalarProperty Name="message_id" ColumnName="message_id" />
+            <ScalarProperty Name="fromUser" ColumnName="fromUser" />
+            <ScalarProperty Name="toUser" ColumnName="toUser" />
+            <ScalarProperty Name="create_time" ColumnName="create_time" />
+            <ScalarProperty Name="origin" ColumnName="origin" />
+            <ScalarProperty Name="msgtype" ColumnName="msgtype" />
+            <ScalarProperty Name="event" ColumnName="event" />
+            <ScalarProperty Name="msgContent" ColumnName="msgContent" />
+            <ScalarProperty Name="status" ColumnName="status" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="We_Order"><EntityTypeMapping TypeName="feelingModel.We_Order"><MappingFragment StoreEntitySet="We_Order">
+            <ScalarProperty Name="order_id" ColumnName="order_id" />
+            <ScalarProperty Name="customer" ColumnName="customer" />
+            <ScalarProperty Name="vendor" ColumnName="vendor" />
+            <ScalarProperty Name="pay_status" ColumnName="pay_status" />
+            <ScalarProperty Name="ord_amount" ColumnName="ord_amount" />
+            <ScalarProperty Name="pay_amount" ColumnName="pay_amount" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="order_time" ColumnName="order_time" />
+            <ScalarProperty Name="start_time" ColumnName="start_time" />
+            <ScalarProperty Name="end_time" ColumnName="end_time" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="We_Resource"><EntityTypeMapping TypeName="feelingModel.We_Resource"><MappingFragment StoreEntitySet="We_Resource">
+            <ScalarProperty Name="resource_id" ColumnName="resource_id" />
+            <ScalarProperty Name="creator" ColumnName="creator" />
+            <ScalarProperty Name="create_time" ColumnName="create_time" />
+            <ScalarProperty Name="cata" ColumnName="cata" />
+            <ScalarProperty Name="kind" ColumnName="kind" />
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="media_path" ColumnName="media_path" />
+            <ScalarProperty Name="thb_media_path" ColumnName="thb_media_path" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="update_time" ColumnName="update_time" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="We_User"><EntityTypeMapping TypeName="feelingModel.We_User"><MappingFragment StoreEntitySet="We_User">
+            <ScalarProperty Name="openid" ColumnName="openid" />
+            <ScalarProperty Name="nickname" ColumnName="nickname" />
+            <ScalarProperty Name="sex" ColumnName="sex" />
+            <ScalarProperty Name="city" ColumnName="city" />
+            <ScalarProperty Name="country" ColumnName="country" />
+            <ScalarProperty Name="province" ColumnName="province" />
+            <ScalarProperty Name="language" ColumnName="language" />
+            <ScalarProperty Name="headimgurl" ColumnName="headimgurl" />
+            <ScalarProperty Name="subscribe_time" ColumnName="subscribe_time" />
+            <ScalarProperty Name="unionid" ColumnName="unionid" />
+            <ScalarProperty Name="kind" ColumnName="kind" />
+            <ScalarProperty Name="status" ColumnName="status" />
+            <ScalarProperty Name="serv_auth" ColumnName="serv_auth" />
+            <ScalarProperty Name="serv_price" ColumnName="serv_price" />
+            <ScalarProperty Name="pay_total" ColumnName="pay_total" />
+            <ScalarProperty Name="cost_total" ColumnName="cost_total" />
+            <ScalarProperty Name="remn_amount" ColumnName="remn_amount" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModelFeeling">
+        <EntityTypeShape EntityType="feelingModel.We_Cost" Width="1.5" PointX="0.75" PointY="0.75" Height="2.128072916666667" IsExpanded="true" />
+        <EntityTypeShape EntityType="feelingModel.We_Dict" Width="1.5" PointX="2.75" PointY="0.75" Height="1.7908333333333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="feelingModel.We_Message" Width="1.5" PointX="0.75" PointY="3.75" Height="2.4653124999999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="feelingModel.We_Order" Width="1.5" PointX="2.75" PointY="3.75" Height="2.6339322916666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="feelingModel.We_Resource" Width="1.5" PointX="4.75" PointY="0.75" Height="2.6339322916666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="feelingModel.We_User" Width="1.5" PointX="4.75" PointY="4.75" Height="3.8142708333333317" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

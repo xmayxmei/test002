@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="feelingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="We_Cost" EntityType="feelingModel.We_Cost" />
+    <EntitySet Name="We_Dict" EntityType="feelingModel.We_Dict" />
+    <EntitySet Name="We_Message" EntityType="feelingModel.We_Message" />
+    <EntitySet Name="We_Order" EntityType="feelingModel.We_Order" />
+    <EntitySet Name="We_Resource" EntityType="feelingModel.We_Resource" />
+    <EntitySet Name="We_User" EntityType="feelingModel.We_User" />
+  </EntityContainer>
+  <EntityType Name="We_Cost">
+    <Key>
+      <PropertyRef Name="cost_id" />
+    </Key>
+    <Property Name="cost_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cost_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="creator" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="kind" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="obj_no" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="We_Dict">
+    <Key>
+      <PropertyRef Name="dict_id" />
+    </Key>
+    <Property Name="dict_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="dis_name" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="parent_path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="We_Message">
+    <Key>
+      <PropertyRef Name="message_id" />
+    </Key>
+    <Property Name="message_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fromUser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="toUser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="origin" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="msgtype" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="event" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="msgContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="We_Order">
+    <Key>
+      <PropertyRef Name="order_id" />
+    </Key>
+    <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="vendor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pay_status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="ord_amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="pay_amount" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="order_time" Type="DateTime" />
+    <Property Name="start_time" Type="DateTime" />
+    <Property Name="end_time" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="We_Resource">
+    <Key>
+      <PropertyRef Name="resource_id" />
+    </Key>
+    <Property Name="resource_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="creator" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="create_time" Type="DateTime" />
+    <Property Name="cata" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="kind" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="media_path" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="thb_media_path" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="update_time" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="We_User">
+    <Key>
+      <PropertyRef Name="openid" />
+    </Key>
+    <Property Name="openid" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="nickname" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="sex" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="country" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="province" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="language" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="headimgurl" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="subscribe_time" Type="DateTime" />
+    <Property Name="unionid" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="kind" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="serv_auth" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="serv_price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="pay_total" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="cost_total" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="remn_amount" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+</Schema>

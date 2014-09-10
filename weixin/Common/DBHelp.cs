@@ -16,7 +16,7 @@ namespace bgweb
 
         public DBHelp()
         {
-            connString = ConfigurationManager.ConnectionStrings["BgEntities"].ConnectionString;
+            connString = ConfigurationManager.ConnectionStrings["feelingEntities"].ConnectionString;
         }
        
         public string ProfileName

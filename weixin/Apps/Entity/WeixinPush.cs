@@ -23,7 +23,7 @@ namespace Weixin.Apps.Entity
         public void pushMessage(WeixinVO lowerWeixin,Object[] result)//下行
         {
             //取要发送的主体content内容
-            String message = WeixinTempl.covtDailyCounter2PostStr(0,result,"","");
+            String message = null;
             lowerWeixin.Content = message;
             //取模板匹配模板(准备要发送的数据)
             string messageByTmpl = WeixinTempl.makePushMessage(lowerWeixin);

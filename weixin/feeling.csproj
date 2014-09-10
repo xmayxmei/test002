@@ -123,49 +123,49 @@
       <DependentUpon>feeling.ashx</DependentUpon>
     </Compile>
     <Compile Include="Apps\Service\ActService.cs" />
+    <Compile Include="Apps\Service\OrderService.cs" />
+    <Compile Include="Apps\Service\UserService.cs" />
+    <Compile Include="Apps\Service\MessageService.cs" />
     <Compile Include="Common\DBHelp.cs" />
     <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\bgdb.Designer.cs">
+    <Compile Include="Models\ModelFeeling.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>bgdb.edmx</DependentUpon>
+      <DependentUpon>ModelFeeling.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BgEntities.Context.cs">
+    <Compile Include="Models\ModelFeeling.Context.Extensions.cs">
+      <DependentUpon>ModelFeeling.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelFeeling.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BgEntities.Context.tt</DependentUpon>
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BgEntities.cs">
+    <Compile Include="Models\ModelFeeling.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BgEntities.tt</DependentUpon>
+      <DependentUpon>ModelFeeling.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Bg_Mains.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
+    <Compile Include="Models\We_Cost.cs">
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\codeclass.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
+    <Compile Include="Models\We_Dict.cs">
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Codes.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
+    <Compile Include="Models\We_Message.cs">
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Companies.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
+    <Compile Include="Models\We_Order.cs">
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\InterData.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
+    <Compile Include="Models\We_Resource.cs">
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Stcodes.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Stitems.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Sys_Users.cs">
-      <DependentUpon>BgEntities.tt</DependentUpon>
+    <Compile Include="Models\We_User.cs">
+      <DependentUpon>ModelFeeling.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,7 +174,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -196,22 +198,22 @@
     <Content Include="Apps\Outer\Weixin\feeling.ashx" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\bgdb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>bgdb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\BgEntities.Context.tt">
+    <EntityDeploy Include="Models\ModelFeeling.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelFeeling.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\ModelFeeling.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BgEntities.Context.cs</LastGenOutput>
+      <LastGenOutput>ModelFeeling.Context.cs</LastGenOutput>
     </None>
-    <None Include="Models\BgEntities.tt">
+    <None Include="Models\ModelFeeling.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BgEntities.cs</LastGenOutput>
+      <LastGenOutput>ModelFeeling.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <PropertyGroup>

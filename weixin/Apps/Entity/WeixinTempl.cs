@@ -186,19 +186,11 @@ namespace Weixin.Apps.Entity
         /// </summary>
         /// <param name="stcode"></param>
         /// <returns></returns>
-        public static string covtStcode2PostStr(Stcodes stcode)
+        public static string covtStcode2PostStr()
         {
+            String code_ts = null;
             string messageTmpl = BIANMA_TMPL; 
-            messageTmpl = Regex.Replace(messageTmpl, "\\{code_ts\\}", stcode.code_ts==null?"":stcode.code_ts);
-            messageTmpl = Regex.Replace(messageTmpl,"\\{g_name\\}", stcode.g_name==null?"":stcode.g_name);
-            messageTmpl = Regex.Replace(messageTmpl,"\\{control\\}", stcode.control==null?"":stcode.control);
-            messageTmpl = Regex.Replace(messageTmpl, "\\{tax_type\\}", stcode.tax_type == null ? "" : stcode.tax_type);
-            messageTmpl = Regex.Replace(messageTmpl,"\\{unit_no\\}", stcode.unit_no==null?"":stcode.unit_no);
-            messageTmpl = Regex.Replace(messageTmpl,"\\{sunit_no\\}", stcode.sunit_no==null?"":stcode.sunit_no);
-            messageTmpl = Regex.Replace(messageTmpl,"\\{note_s\\}", stcode.note_s==null?"":stcode.note_s.Trim());
-            messageTmpl = Regex.Replace(messageTmpl,"\\{low_rate\\}", stcode.low_rate==null?"":(Double.Parse(stcode.low_rate)>0?(Double.Parse(stcode.low_rate)*100).ToString()+"%":"0"));
-            messageTmpl = Regex.Replace(messageTmpl, "\\{high_rate\\}", stcode.high_rate == null ? "" : (Double.Parse(stcode.high_rate) > 0 ? (Double.Parse(stcode.high_rate) * 100).ToString() + "%" : "0"));
-            messageTmpl = Regex.Replace(messageTmpl, "\\{tax_rate\\}", stcode.tax_rate == null ? "" :(Double.Parse(stcode.tax_rate)>0?(Double.Parse(stcode.tax_rate)*100).ToString()+"%":"0"));
+            messageTmpl = Regex.Replace(messageTmpl, "\\{code_ts\\}", code_ts==null?"":code_ts);
             return messageTmpl;
         }
       
